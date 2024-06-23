@@ -1,0 +1,32 @@
+.search{
+    margin: 0 auto ;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+.inputS{
+    width: 400px;
+    height: 30px;
+    border : none ;
+    padding : 5px ;
+    font-size: 20px;
+    font-weight: bold;
+}
+.inputS:focus{
+    outline-style: groove;
+    outline-color: blue;
+}
+.buttonS{
+    width: 100px;
+    border : none ;
+    background-color: skyblue;
+    font-size: medium;
+    font-weight: bold;
+    cursor: pointer;
+}
+.buttonS:hover{
+    background-color: rgb(74, 195, 243);
+}
+.buttonS:active{
+    background-color: skyblue;
+}

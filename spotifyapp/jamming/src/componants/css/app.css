@@ -1,0 +1,7 @@
+.container{
+    height: 900px;
+    background-image: url(../../images/backgroundM.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

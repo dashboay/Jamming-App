@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+header{
+    border: black solid 1px;
+    height: 125px;
+    background: linear-gradient(white,rgba(111, 200, 235, 0.843));
+}
+.title{
+    text-align: center;
+    margin-top: 40px;
+}
+.sb{
+    color: rgb(57, 185, 236) ;
+    transition: 1000ms;
+}
+.inl{
+    display: flex;
+    justify-content: center;
+}

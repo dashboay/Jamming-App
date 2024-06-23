@@ -1,0 +1,30 @@
+.rs{
+    border: white solid 1px ;
+    height: 600px;
+    width: 550px;
+    margin-top: 60px;  
+    background-color: rgba(142, 208, 235, 0.6);
+}
+.item{
+    margin: 0 auto ;
+    margin-top: 10px;
+    border: black solid 2px ;
+    height: 100px;
+    width: 500px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-image: url(image.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.p{
+    margin-top: 40px;
+    margin-left: 20px;
+    font-weight: 500;
+    font-size: 25px;
+}
+.add{
+    border-radius: 20px ;
+}
