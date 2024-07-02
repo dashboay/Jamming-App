@@ -6,7 +6,7 @@ import Favorites from "./Mcomponants/favorite/favorites";
 import Item from "./Mcomponants/item/item";
 import fetching from "./Mcomponants/utilities/fetching";
 import token from "./Mcomponants/utilities/newtoken";
-import ItemL from "./itemL/itemL";
+import ItemL from "./Mcomponants/itemL/itemL";
 
 
 const Main = function(props){
