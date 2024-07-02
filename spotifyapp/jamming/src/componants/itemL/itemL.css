@@ -1,0 +1,19 @@
+.m{
+    width: 520px;
+    height: 100px;
+    margin-top: 10px !important;
+    border-radius: 20px;
+    border : black solid 2px ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto ;
+    overflow-y: hidden ;
+    cursor: pointer;
+}
+.p{
+    color : black ;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+}

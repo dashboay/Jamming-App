@@ -1,40 +1,55 @@
 import React,{useState,useEffect} from "react";
 import "./css/main.css";
-import Search from "./Mcomponants/search";
-import Results from "./Mcomponants/results";
-import Favorites from "./Mcomponants/favorites";
+import Search from "./Mcomponants/search/search";
+import Results from "./Mcomponants/result/results";
+import Favorites from "./Mcomponants/favorite/favorites";
+import Item from "./Mcomponants/item/item";
+import fetching from "./Mcomponants/utilities/fetching";
+import token from "./Mcomponants/utilities/newtoken";
+import ItemL from "./itemL/itemL";
 
 
 const Main = function(props){
-    let handle1 ;
-    const [data,setData] = useState("");
+    //use stats
+    const [data,setData] = useState("hello");
     const [fetchedD , setfetchedD] = useState([]);
+    const [favorite , setFavorite] = useState([]);
     const handlerD = (text)=>{
         setData(text);
     }
+    const fun = async function(){
+        let task1 = await token();
+        let task2 = await fetching(task1,data);
+        setfetchedD(task2.albums.items);
+    }
+    //use effect
     useEffect(function(){
-        console.log(data);
-        fetch('https://spotify23.p.rapidapi.com/search/?q='+data+'&type=albums&offset=0&limit=10&numberOfTopResults=5',{
-            method: "GET",
-            headers:{
-                'x-rapidapi-key': 'f128cb6c82msh685b5612f73dc83p17c6fdjsn95924fda79d8',
-                'x-rapidapi-host': 'spotify23.p.rapidapi.com'
-            }
-        }).then(function(response){
-            if(response.ok){
-                return response.json();
-            }
-        }).then(function(res){
-            setfetchedD(res);
-            console.log(res);
-        })
+    //calling async function
+    fun();
+    console.log(fetchedD);
     },[data])
+
+    const handler = function(data1 , data2){
+        setFavorite(pfav => [...pfav , {title : data1 , background : data2}]);
+    }
+
+    console.log(fetchedD);
     return(
         <main>
             <Search funa={handlerD} />
             <section>
-                <Results />
-                <Favorites />
+                <Results>
+                    {fetchedD.map(function(ob,index){
+                        return <Item dataP={handler} event={handler} key={index} title={ob.name} background={ob.images[0].url} />
+                    })}
+                </Results>
+                <Favorites>
+                    {
+                        favorite.map(function(item , key){
+                            return <ItemL audio = {fetchedD.href} id = {key} dd = {key} title = {item.title} background = {item.background}  key = {key}/>
+                        })
+                    }
+                </Favorites>
             </section>
             {props.children}
         </main>

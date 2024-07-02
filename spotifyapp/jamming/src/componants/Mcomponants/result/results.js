@@ -1,12 +1,11 @@
 import React from "react";
-import "./style.css";
-import Item from "./item";
+import "./../style.css";
 
 
 const Results = function(props){
     return(
         <div className="rs">
-            <Item />
+            <h2>results</h2>
             {props.children}
         </div>
     )
